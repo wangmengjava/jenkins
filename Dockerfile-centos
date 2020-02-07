@@ -58,9 +58,9 @@ ARG JENKINS_URL=https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-w
 RUN curl -fsSL ${JENKINS_URL} -o /usr/share/jenkins/jenkins.war \
   && echo "${JENKINS_SHA}  /usr/share/jenkins/jenkins.war" | sha256sum -c -
 
-ENV JENKINS_UC https://updates.jenkins.io
-ENV JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental
-ENV JENKINS_INCREMENTALS_REPO_MIRROR=https://repo.jenkins-ci.org/incrementals
+ENV JENKINS_UC https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/
+ENV JENKINS_UC_EXPERIMENTAL https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental/
+ENV JENKINS_INCREMENTALS_REPO_MIRROR https://repo.jenkins-ci.org/incrementals
 RUN chown -R ${user} "$JENKINS_HOME" "$REF"
 
 # for main web interface:
